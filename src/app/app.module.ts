@@ -6,6 +6,7 @@ import { CvFormComponent } from './components/cv-form/cv-form.component';
 import {FormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import { CvListComponent } from './components/cv-list/cv-list.component';
+import {AngularSplitModule} from "angular-split";
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { CvListComponent } from './components/cv-list/cv-list.component';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AngularSplitModule
   ],
   providers: [],
   bootstrap: [AppComponent]

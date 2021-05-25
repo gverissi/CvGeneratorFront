@@ -1,3 +1,20 @@
 
-<app-cv-list></app-cv-list>
-<app-cv-form></app-cv-form>
+<div class="container-fluid">
+  <div class="row">
+    <h1 class="text-center bg-secondary py-5">My Awesome App</h1>
+  </div>
+  <div class="row" style="height: 500px;">
+    <as-split direction="horizontal">
+      <as-split-area [size]="15">
+        <div>
+          <app-cv-list></app-cv-list>
+        </div>
+      </as-split-area>
+      <as-split-area [size]="85">
+        <div>
+          <app-cv-form></app-cv-form>
+        </div>
+      </as-split-area>
+    </as-split>
+  </div>
+</div>
