@@ -16,7 +16,7 @@ export class PersonService {
   }
 
   public findByCvId(cvId: number): Observable<Person> {
-    return this.http.get<Person>(this.personUrl);
+    return this.http.get<Person>(environment.apiUrl + 'cvs/' + cvId + '/person');
   }
 
   public save(person: Person) {

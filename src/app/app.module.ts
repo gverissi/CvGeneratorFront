@@ -14,8 +14,8 @@ import { PersonFormComponent } from './components/person-form/person-form.compon
 const appRoutes: Routes = [
   {path: 'cv', component: CvFormComponent},
   {path: 'person', component: PersonFormComponent},
-  {path: '', redirectTo: '/home', pathMatch: 'full'},
-  {path: '**', redirectTo: '/home', pathMatch: 'full'}
+  {path: '', redirectTo: '/cv', pathMatch: 'full'},
+  {path: '**', redirectTo: '/cv', pathMatch: 'full'}
 ];
 
 @NgModule({
