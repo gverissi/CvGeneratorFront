@@ -16,16 +16,14 @@ export class PersonFormComponent implements OnInit, OnDestroy {
 
   constructor(private personService: PersonService, private cvIdService: CvIdService) {
     this.person = new Person();
-    const cvId = this.cvIdService.cvId;
-    if (cvId !== 0) {
-      this.personService.findByCvId(cvId).subscribe(person => this.person = person);
-    }
   }
 
   ngOnInit(): void {
-    this.personSubscription = this.cvIdService.cvIdObservable.subscribe(cvId =>
-      this.personService.findByCvId(cvId).subscribe(person => this.person = person)
-    );
+    this.personSubscription = this.cvIdService.cvIdObservable.subscribe(cvId => {
+      if (cvId !== 0) {
+        this.personService.findByCvId(cvId).subscribe(person => this.person = person);
+      }
+    });
   }
 
   ngOnDestroy(): void {

@@ -1,17 +1,15 @@
 import { Injectable } from '@angular/core';
-import {Subject} from "rxjs";
+import {BehaviorSubject} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
 })
 export class CvIdService {
 
-  cvId: number = 0;
-  cvIdSubject = new Subject<number>();
+  cvIdSubject = new BehaviorSubject<number>(0);
   cvIdObservable = this.cvIdSubject.asObservable();
 
   notifyCvIdChanged(cvId: number) {
-    this.cvId = cvId;
     this.cvIdSubject.next(cvId);
   }
 
