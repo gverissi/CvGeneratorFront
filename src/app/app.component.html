@@ -5,18 +5,18 @@
     <h1 class="text-center bg-secondary py-5">My Awesome App</h1>
   </div>
 
-  <div class="row" style="height: 500px;">
-    <as-split direction="horizontal">
+  <div class="row py-5" style="height: 500px;">
+    <as-split direction="horizontal" class="p-0">
       <as-split-area [size]="15">
         <div>
           <app-cv-list></app-cv-list>
         </div>
       </as-split-area>
       <as-split-area [size]="85">
-        <div>
+        <div class="px-3">
           <app-navbar></app-navbar>
         </div>
-        <div>
+        <div class="p-5">
           <router-outlet></router-outlet>
         </div>
       </as-split-area>

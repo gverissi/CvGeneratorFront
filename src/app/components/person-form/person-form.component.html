@@ -1,0 +1,22 @@
+
+<div class="container">
+  <form (ngSubmit)="onSubmit()" #personForm="ngForm">
+    <div class="mb-4">
+      <label for="firstName" class="form-label">First Name</label>
+      <input type="text" class="form-control" id="firstName" name="firstName" [(ngModel)]="person.firstName" required>
+    </div>
+    <div class="mb-4">
+      <label for="lastName" class="form-label">Last Name</label>
+      <input type="text" class="form-control" id="lastName" name="lastName" [(ngModel)]="person.lastName" required>
+    </div>
+    <div class="mb-4">
+      <label for="job" class="form-label">Job</label>
+      <input type="text" class="form-control" id="job" name="job" [(ngModel)]="person.job" required>
+    </div>
+    <div class="mb-4">
+      <label for="profile" class="form-label">Profile</label>
+      <textarea class="form-control" id="profile" name="profile" [(ngModel)]="person.profile" required></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="!personForm.form.valid">Create new CV</button>
+  </form>
+</div>

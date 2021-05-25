@@ -9,10 +9,11 @@ import { CvListComponent } from './components/cv-list/cv-list.component';
 import {AngularSplitModule} from "angular-split";
 import { NavbarComponent } from './components/navbar/navbar.component';
 import {RouterModule, Routes} from "@angular/router";
+import { PersonFormComponent } from './components/person-form/person-form.component';
 
 const appRoutes: Routes = [
-  {path: 'home', component: CvFormComponent},
-  {path: 'register', component: CvFormComponent},
+  {path: 'cv', component: CvFormComponent},
+  {path: 'person', component: PersonFormComponent},
   {path: '', redirectTo: '/home', pathMatch: 'full'},
   {path: '**', redirectTo: '/home', pathMatch: 'full'}
 ];
@@ -22,7 +23,8 @@ const appRoutes: Routes = [
     AppComponent,
     CvFormComponent,
     CvListComponent,
-    NavbarComponent
+    NavbarComponent,
+    PersonFormComponent
   ],
   imports: [
     BrowserModule,
