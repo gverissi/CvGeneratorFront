@@ -6,10 +6,10 @@ import {BehaviorSubject} from "rxjs";
 })
 export class CvIdService {
 
-  cvIdSubject = new BehaviorSubject<number>(0);
-  cvIdObservable = this.cvIdSubject.asObservable();
+  private cvIdSubject = new BehaviorSubject<number>(0);
+  public cvIdObservable = this.cvIdSubject.asObservable();
 
-  notifyCvIdChanged(cvId: number) {
+  public notifyCvIdChanged(cvId: number): void {
     this.cvIdSubject.next(cvId);
   }
 

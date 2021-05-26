@@ -19,7 +19,7 @@ export class CvFormComponent implements OnInit {
   }
 
   onSubmit(): void {
-    this.cvService.save(this.cv).subscribe(result => console.log(result));
+    this.cvService.save(this.cv).subscribe(() => this.cvService.notifyCvListChanged());
   }
 
 }
