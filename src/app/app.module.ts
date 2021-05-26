@@ -10,10 +10,13 @@ import {AngularSplitModule} from "angular-split";
 import { NavbarComponent } from './components/navbar/navbar.component';
 import {RouterModule, Routes} from "@angular/router";
 import { PersonFormComponent } from './components/person-form/person-form.component';
+import { ExperienceFormComponent } from './components/experience-form/experience-form.component';
+import { ExperienceListComponent } from './components/experience-list/experience-list.component';
 
 const appRoutes: Routes = [
   {path: 'cv', component: CvFormComponent},
   {path: 'person', component: PersonFormComponent},
+  {path: 'experiences', component: ExperienceListComponent},
   {path: '', redirectTo: '/cv', pathMatch: 'full'},
   {path: '**', redirectTo: '/cv', pathMatch: 'full'}
 ];
@@ -24,7 +27,9 @@ const appRoutes: Routes = [
     CvFormComponent,
     CvListComponent,
     NavbarComponent,
-    PersonFormComponent
+    PersonFormComponent,
+    ExperienceFormComponent,
+    ExperienceListComponent
   ],
   imports: [
     BrowserModule,
