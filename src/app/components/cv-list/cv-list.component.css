@@ -1,0 +1,9 @@
+
+.is-selected {
+  font-weight: bold;
+  font-size: larger;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}

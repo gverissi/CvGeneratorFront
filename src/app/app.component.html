@@ -2,23 +2,21 @@
 <div class="container-fluid">
 
   <div class="row">
-    <h1 class="text-center bg-secondary py-5">My Awesome App</h1>
+    <h1 class="text-center bg-secondary py-5 m-0">My Awesome App</h1>
   </div>
 
-  <div class="row py-5" style="height: 500px;">
+  <div class="row full-height">
     <as-split direction="horizontal" class="p-0">
-      <as-split-area [size]="15">
-        <div>
+      <as-split-area [size]="20">
+        <div class="p-3">
           <app-cv-list></app-cv-list>
         </div>
       </as-split-area>
-      <as-split-area [size]="85">
-        <div class="px-3">
+      <as-split-area [size]="80">
+        <div class="p-3">
           <app-navbar></app-navbar>
         </div>
-        <div class="p-5">
-          <router-outlet></router-outlet>
-        </div>
+        <router-outlet></router-outlet>
       </as-split-area>
     </as-split>
   </div>

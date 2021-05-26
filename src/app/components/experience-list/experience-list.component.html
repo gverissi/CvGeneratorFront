@@ -1,5 +1,5 @@
 
-<div class="container">
+<div class="container auto-scroll">
   <ul class="list-group list-group-flush">
     <li class="list-group-item" *ngFor="let experience of experiences"><app-experience-form [experience]=experience></app-experience-form></li>
     <li class="list-group-item">
@@ -11,8 +11,4 @@
       </div>
     </li>
   </ul>
-<!--  <div>-->
-<!--    <button class="btn btn-primary" (click)="newExperience()">New Experience</button>-->
-<!--    <button class="btn btn-primary" (click)="onSubmit()">Save</button>-->
-<!--  </div>-->
 </div>

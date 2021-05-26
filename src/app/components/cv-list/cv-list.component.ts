@@ -13,17 +13,19 @@ export class CvListComponent implements OnInit, OnDestroy {
 
   cvList: Curriculum[];
   cvListSubscription: Subscription | undefined;
+  cvId: number;
 
   constructor(private cvService: CurriculumService, private cvIdService: CvIdService) {
     this.cvList = [];
+    this.cvId = 0;
   }
 
   ngOnInit(): void {
-    // this.cvService.findAll().subscribe(cvList => {
-    //   this.cvList = cvList;
-    // });
     this.cvListSubscription = this.cvService.findAllAsObservable.subscribe(cvList => {
       this.cvList = cvList;
+      if (cvList.length > 0) {
+        this.cvId = cvList[0].id;
+      }
     });
   }
 
@@ -38,6 +40,7 @@ export class CvListComponent implements OnInit, OnDestroy {
   }
 
   cvIdChanged(cvId: number): void {
+    this.cvId = cvId;
     this.cvIdService.notifyCvIdChanged(cvId);
   }
 

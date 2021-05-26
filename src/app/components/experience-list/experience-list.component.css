@@ -1,0 +1,5 @@
+
+.auto-scroll {
+  height: calc(100vh - 218px);
+  overflow-y: auto;
+}
