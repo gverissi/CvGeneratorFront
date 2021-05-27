@@ -37,8 +37,13 @@ export class ExperienceListComponent implements OnInit, OnDestroy {
   }
 
   onSubmit(): void {
-    this.experiences.forEach(experience => this.experienceService.save(this.cvId, experience).subscribe(value => console.log(value)))
-    // this.experienceService.save(this.cvId, this.experiences[0]).subscribe(value => console.log(value));
+    for (let i = 0; i < this.experiences.length; i++) {
+      if (this.experiences[i].id === 0) {
+        this.experienceService.save(this.cvId, this.experiences[i]).subscribe(exp => this.experiences[i] = exp);
+      } else {
+        this.experienceService.update(this.cvId, this.experiences[i]).subscribe();
+      }
+    }
   }
 
 }
