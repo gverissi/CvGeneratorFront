@@ -13,10 +13,12 @@
         </div>
       </as-split-area>
       <as-split-area [size]="80">
-        <div class="p-3">
-          <app-navbar></app-navbar>
+        <div *ngIf="cvId !== 0">
+          <div class="p-3">
+            <app-navbar></app-navbar>
+          </div>
+          <router-outlet></router-outlet>
         </div>
-        <router-outlet></router-outlet>
       </as-split-area>
     </as-split>
   </div>
