@@ -9,18 +9,20 @@ import {Person} from "../../entities/person/person";
 })
 export class PersonService {
 
-  personUrl: string;
+  private readonly personUrl: string;
 
   constructor(private http: HttpClient) {
-    this.personUrl = environment.apiUrl + 'cvs/1/person';
+    this.personUrl = environment.apiUrl + 'cvs/';
   }
 
   public findByCvId(cvId: number): Observable<Person> {
-    return this.http.get<Person>(environment.apiUrl + 'cvs/' + cvId + '/person');
+    const url = this.personUrl + cvId + '/person';
+    return this.http.get<Person>(url);
   }
 
-  public save(person: Person) {
-    return this.http.post<Person>(this.personUrl, person);
+  public save(cvId: number, person: Person): Observable<Person> {
+    const url = this.personUrl + cvId + '/person';
+    return this.http.post<Person>(url, person);
   }
 
 }

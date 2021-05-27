@@ -13,6 +13,7 @@ export class PersonFormComponent implements OnInit, OnDestroy {
 
   personSubscription: Subscription | undefined;
   person: Person;
+  cvId: number = 0;
 
   constructor(private personService: PersonService, private cvIdService: CvIdService) {
     this.person = new Person();
@@ -20,6 +21,7 @@ export class PersonFormComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.personSubscription = this.cvIdService.cvIdObservable.subscribe(cvId => {
+      this.cvId = cvId;
       if (cvId !== 0) {
         this.personService.findByCvId(cvId).subscribe(person => this.person = person);
       }
@@ -31,7 +33,7 @@ export class PersonFormComponent implements OnInit, OnDestroy {
   }
 
   onSubmit(): void {
-    this.personService.save(this.person).subscribe(result => console.log(result));
+    this.personService.save(this.cvId, this.person).subscribe(person => this.person = person);
   }
 
 }

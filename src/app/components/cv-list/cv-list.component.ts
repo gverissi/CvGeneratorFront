@@ -36,7 +36,7 @@ export class CvListComponent implements OnInit, OnDestroy {
   createNewCV(): void {
     const cv = new Curriculum();
     cv.name = 'new CV';
-    this.cvService.save(cv).subscribe((cv) => {
+    this.cvService.save(cv).subscribe(cv => {
       this.cvService.notifyCvListChanged();
       this.cvIdChanged(cv.id);
     });
