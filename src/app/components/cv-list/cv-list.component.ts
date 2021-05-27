@@ -23,8 +23,8 @@ export class CvListComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.cvListSubscription = this.cvService.findAllAsObservable.subscribe(cvList => {
       this.cvList = cvList;
-      if (this.cvId ===0 && cvList.length > 0) {
-        this.cvId = cvList[0].id;
+      if (this.cvId === 0 && cvList.length > 0) {
+        this.cvIdChanged(cvList[0].id);
       }
     });
   }
