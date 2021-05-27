@@ -9,10 +9,9 @@ import {environment} from "../../../environments/environment";
 })
 export class CurriculumService {
 
+  private readonly cvUrl: string;
   private cvSubject = new BehaviorSubject<Curriculum[]>([]);
   public findAllAsObservable = this.cvSubject.asObservable();
-
-  cvUrl: string;
 
   constructor(private http: HttpClient) {
     this.cvUrl = environment.apiUrl + 'cvs';
@@ -27,8 +26,18 @@ export class CurriculumService {
     return this.http.get<Curriculum[]>(this.cvUrl);
   }
 
+  public findById(cvId: number): Observable<Curriculum> {
+    const url = this.cvUrl + '/' + cvId;
+    return this.http.get<Curriculum>(url);
+  }
+
   public save(cv: Curriculum): Observable<Curriculum> {
     return this.http.post<Curriculum>(this.cvUrl, cv);
+  }
+
+  public update(cv: Curriculum): Observable<Curriculum> {
+    const url = this.cvUrl + '/' + cv.id;
+    return this.http.put<Curriculum>(url, cv);
   }
 
 }
