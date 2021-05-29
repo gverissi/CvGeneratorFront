@@ -1,5 +1,22 @@
 
 <div class="container">
+
+<!--  <input type="file" (change)="onFileChanged($event)" #fileInput>-->
+<!--  <button (click)="fileInput.click()">Select File</button>-->
+<!--  <p>{{imageName}}</p>-->
+
+  <div class="mb-4">
+    <input type="file" (change)="onFileChanged($event)" #fileInput>
+    <label for="image" class="form-label">Image</label>
+    <p class="form-control" id="image" (click)="fileInput.click()" >{{imageName}}</p>
+  </div>
+
+<!--  <div class="mb-4">-->
+<!--    <input type="file" (change)="onFileChanged($event)" #fileInput>-->
+<!--    <label for="image" class="form-label">Image</label>-->
+<!--    <input type="text" class="form-control" id="image" (click)="fileInput.click()" value="{{imageName}}" disabled>-->
+<!--  </div>-->
+
   <form (ngSubmit)="onSubmit()" #personForm="ngForm">
     <div class="mb-4">
       <label for="firstName" class="form-label">First Name</label>
@@ -21,4 +38,5 @@
       <button type="submit" class="btn btn-primary" [disabled]="!personForm.form.valid">Save</button>
     </div>
   </form>
+
 </div>
