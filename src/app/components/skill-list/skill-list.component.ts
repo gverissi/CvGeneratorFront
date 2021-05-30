@@ -31,12 +31,6 @@ export class SkillListComponent implements OnInit, OnDestroy {
       this.allSkills = allSkills;
       this.skillTypes = [...new Set(allSkills.map(skill => skill.type))];
     });
-    // this.cvSkillListSubscription = this.cvIdService.cvIdObservable.subscribe(cvId => {
-    //   this.cvId = cvId;
-    //   if (cvId !== 0) {
-    //     this.skillService.findAllByCvId(cvId).subscribe(skills => this.cvSkills = skills);
-    //   }
-    // });
     this.cvSkillListSubscription = this.cvIdService.cvIdObservable.subscribe(cvId => {
       this.cvId = cvId;
       if (cvId !== 0) {

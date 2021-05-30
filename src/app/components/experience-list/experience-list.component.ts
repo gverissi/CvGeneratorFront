@@ -23,9 +23,10 @@ export class ExperienceListComponent implements OnInit, OnDestroy {
     this.experienceListSubscription = this.cvIdService.cvIdObservable.subscribe(cvId => {
       this.cvId = cvId;
       if (cvId !== 0) {
-        this.experienceService.findByCvId(cvId).subscribe(experiences => this.experiences = experiences);
+        this.experienceService.notifyCvExperienceListChanged(cvId);
       }
     });
+    this.experienceService.findAllByCvIdAsObservable.subscribe(experiences => this.experiences = experiences);
   }
 
   ngOnDestroy(): void {

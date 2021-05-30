@@ -1,7 +1,9 @@
 
 <div class="container auto-scroll">
   <ul class="list-group list-group-flush">
-    <li class="list-group-item" *ngFor="let experience of experiences"><app-experience-form [experience]=experience></app-experience-form></li>
+    <li class="list-group-item" *ngFor="let experience of experiences">
+      <app-experience-form [experience]=experience [cvId]=cvId></app-experience-form>
+    </li>
     <li class="list-group-item">
       <div class="text-center my-2">
         <button class="btn btn-primary" (click)="newExperience()">New Experience</button>
