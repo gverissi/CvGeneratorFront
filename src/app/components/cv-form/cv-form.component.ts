@@ -34,4 +34,14 @@ export class CvFormComponent implements OnInit, OnDestroy {
     this.cvService.update(this.cv).subscribe(() => this.cvService.notifyCvListChanged());
   }
 
+  showHtml(): void {
+    const url = "http://localhost:8080/cvs/" + this.cv.id + "/show-html";
+    window.open(url, "_blank");
+  }
+
+  // downloadPdf() {
+  //   const url = "http://localhost:8080/cvs/" + this.cv.id + "/show-html";
+  //   window.open(url, "_blank");
+  // }
+
 }

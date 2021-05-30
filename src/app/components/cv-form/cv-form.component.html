@@ -8,5 +8,11 @@
     <div class="text-center my-2">
       <button type="submit" class="btn btn-primary" [disabled]="!cvForm.form.valid">Save</button>
     </div>
+    <div class="text-center my-2">
+      <button class="btn btn-primary" (click)="showHtml()">Show HTML</button>
+    </div>
+    <div class="text-center my-2">
+      <a class="btn btn-primary" href="http://localhost:8080/cvs/{{cv.id}}/download-pdf">Download PDF</a>
+    </div>
   </form>
 </div>

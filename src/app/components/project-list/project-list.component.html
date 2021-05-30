@@ -1,0 +1,16 @@
+
+<div class="container auto-scroll">
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item" *ngFor="let project of projects">
+      <app-project-form [project]="project" [cvId]=cvId></app-project-form>
+    </li>
+    <li class="list-group-item">
+      <div class="text-center my-2">
+        <button class="btn btn-primary" (click)="newProject()">New Project</button>
+      </div>
+      <div class="text-center my-2">
+        <button class="btn btn-primary" (click)="onSubmit()">Save</button>
+      </div>
+    </li>
+  </ul>
+</div>

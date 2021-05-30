@@ -15,13 +15,16 @@ import { ExperienceListComponent } from './components/experience-list/experience
 import { SkillListComponent } from './components/skill-list/skill-list.component';
 import { SkillComponent } from './components/skill/skill.component';
 import { InformationFormComponent } from './components/information-form/information-form.component';
+import { ProjectListComponent } from './components/project-list/project-list.component';
+import { ProjectFormComponent } from './components/project-form/project-form.component';
 
 const appRoutes: Routes = [
   {path: 'cv', component: CvFormComponent},
   {path: 'person', component: PersonFormComponent},
-  {path: 'experiences', component: ExperienceListComponent},
-  {path: 'skills', component: SkillListComponent},
   {path: 'information', component: InformationFormComponent},
+  {path: 'skills', component: SkillListComponent},
+  {path: 'experiences', component: ExperienceListComponent},
+  {path: 'projects', component: ProjectListComponent},
   {path: '', redirectTo: '/cv', pathMatch: 'full'},
   {path: '**', redirectTo: '/cv', pathMatch: 'full'}
 ];
@@ -37,7 +40,9 @@ const appRoutes: Routes = [
     ExperienceListComponent,
     SkillListComponent,
     SkillComponent,
-    InformationFormComponent
+    InformationFormComponent,
+    ProjectListComponent,
+    ProjectFormComponent
   ],
   imports: [
     BrowserModule,
