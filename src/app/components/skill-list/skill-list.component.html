@@ -1,0 +1,27 @@
+
+<div class="container auto-scroll">
+
+  <form (ngSubmit)="onSubmit()" class="row row-cols-lg-auto g-3 align-items-center">
+    <div class="col-12">
+      <label class="visually-hidden" for="skill">Choose a skill:</label>
+      <select id="skill" name="skillId" [(ngModel)]="skillId" class="form-select" aria-label="Default select example">
+        <option value="0">-- Choose a skill --</option>
+        <optgroup *ngFor="let skillType of skillTypes" label="{{skillType}}">
+          <ng-container *ngFor="let skill of allSkills">
+            <option *ngIf="skill.type == skillType" value="{{skill.id}}">{{skill.name}}</option>
+          </ng-container>
+        </optgroup>
+      </select>
+    </div>
+    <div class="col-12">
+      <button type="submit" class="btn btn-primary">Add</button>
+    </div>
+  </form>
+
+  <ul class="list-group list-group-flush mt-5">
+    <li class="list-group-item" *ngFor="let skill of cvSkills">
+      <app-skill [skill]=skill [cvId]=cvId></app-skill>
+    </li>
+  </ul>
+
+</div>

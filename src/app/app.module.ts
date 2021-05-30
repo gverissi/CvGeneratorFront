@@ -12,11 +12,14 @@ import {RouterModule, Routes} from "@angular/router";
 import { PersonFormComponent } from './components/person-form/person-form.component';
 import { ExperienceFormComponent } from './components/experience-form/experience-form.component';
 import { ExperienceListComponent } from './components/experience-list/experience-list.component';
+import { SkillListComponent } from './components/skill-list/skill-list.component';
+import { SkillComponent } from './components/skill/skill.component';
 
 const appRoutes: Routes = [
   {path: 'cv', component: CvFormComponent},
   {path: 'person', component: PersonFormComponent},
   {path: 'experiences', component: ExperienceListComponent},
+  {path: 'skills', component: SkillListComponent},
   {path: '', redirectTo: '/cv', pathMatch: 'full'},
   {path: '**', redirectTo: '/cv', pathMatch: 'full'}
 ];
@@ -29,7 +32,9 @@ const appRoutes: Routes = [
     NavbarComponent,
     PersonFormComponent,
     ExperienceFormComponent,
-    ExperienceListComponent
+    ExperienceListComponent,
+    SkillListComponent,
+    SkillComponent
   ],
   imports: [
     BrowserModule,
