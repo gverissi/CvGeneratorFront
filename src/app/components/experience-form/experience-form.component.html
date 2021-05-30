@@ -1,5 +1,12 @@
 
 
+<div class="mb-3 row">
+  <label class="col-sm-2 col-form-label">Society</label>
+  <div class="col-sm-10">
+    <input type="text" class="form-control" name="title" [(ngModel)]="experience.society">
+  </div>
+</div>
+
 <div class="my-3 row">
   <label class="col-sm-2 col-form-label">Title</label>
   <div class="col-sm-10">
@@ -8,16 +15,30 @@
 </div>
 
 <div class="mb-3 row">
-  <label class="col-sm-2 col-form-label">Society</label>
+  <label class="col-sm-2 col-form-label">Location</label>
   <div class="col-sm-10">
-    <input type="text" class="form-control" name="title" [(ngModel)]="experience.society">
+    <input type="text" class="form-control" name="location" [(ngModel)]="experience.location">
   </div>
 </div>
 
 <div class="mb-3 row">
-  <label class="col-sm-2 col-form-label">Location</label>
+  <label class="col-sm-2 col-form-label">Year</label>
   <div class="col-sm-10">
-    <input type="text" class="form-control" name="title" [(ngModel)]="experience.location">
+    <input type="number" min="1990" max="2030" step="1" class="form-control" name="year" [(ngModel)]="experience.year">
+  </div>
+</div>
+
+<div class="mb-3 row">
+  <label class="col-sm-2 col-form-label">Duration (month)</label>
+  <div class="col-sm-10">
+    <input type="number" min="1" max="100" step="1" class="form-control" name="duration" [(ngModel)]="experience.duration">
+  </div>
+</div>
+
+<div class="mb-3 row">
+  <label class="col-sm-2 col-form-label">Description</label>
+  <div class="col-sm-10">
+    <textarea type="text" class="form-control" name="description" [(ngModel)]="experience.description"></textarea>
   </div>
 </div>
 

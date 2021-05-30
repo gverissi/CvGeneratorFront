@@ -4,15 +4,18 @@ export class Experience {
   title: string;
   society: string;
   location: string;
-  // startingDate: Date;
-  // endingDate: Date;
+  year: number;
+  duration: number;
+  description: string;
 
   constructor() {
     this.id = 0;
     this.title = "";
     this.society = "";
     this.location = "";
-    // this.startingDate = new Date();
-    // this.endingDate = new Date();
+    this.year = 0;
+    this.duration = 0;
+    this.description = "";
   }
+
 }
