@@ -3,7 +3,7 @@
 
   <button class="btn btn-primary" (click)="createNewCV()">Create new CV</button>
 
-  <ul class="list-group list-group-flush">
+  <ul class="list-group list-group-flush mt-3">
       <li class="list-group-item cursor-pointer" *ngFor="let cv of cvList" (click)="cvIdChanged(cv.id)" [ngClass]="{'is-selected': cvId === cv.id}">
         {{cv.name}}
       </li>

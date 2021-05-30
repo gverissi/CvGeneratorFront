@@ -27,10 +27,7 @@ export class PersonFormComponent implements OnInit, OnDestroy {
       this.cvId = cvId;
       if (cvId !== 0) {
         this.personService.findByCvId(cvId).subscribe(person => this.person = person);
-        this.imageService.findByCvId(cvId).subscribe(imageName => {
-          console.log('imageName = ', imageName);
-          this.imageName = imageName;
-        });
+        this.imageService.findByCvId(cvId).subscribe(imageName => this.imageName = imageName);
       }
     });
   }
@@ -58,18 +55,6 @@ export class PersonFormComponent implements OnInit, OnDestroy {
         }
       }
     }
-
-    // const target = <HTMLInputElement>event.target;
-    // const file: File = target.files[0];
-    // const file: File = (<HTMLInputElement>event.target).files[0];
-    // const target = event.target;
-    // (<HTMLInputElement>event.target).files[0]
-    // if (target !== null) {
-    //   const file: File = target.files[0];
-    //   const uploadData = new FormData();
-    //   uploadData.append('myFile', file, file.name);
-    //   this.imageService.saveImage(this.cvId, uploadData).subscribe(() => console.log('file saved'));
-    // }
-    // @ts-ignore
   }
+
 }

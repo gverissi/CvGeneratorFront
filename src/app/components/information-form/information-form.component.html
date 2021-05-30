@@ -1,0 +1,34 @@
+
+<div class="container">
+
+  <form (ngSubmit)="onSubmit()" #informationForm="ngForm">
+    <div class="mb-4">
+      <label for="birthday" class="form-label">Birthday</label>
+      <input type="date" class="form-control" id="birthday" name="birthday" [(ngModel)]="information.birthDate" required>
+    </div>
+    <div class="mb-4">
+      <label for="mobility" class="form-label">Mobility</label>
+      <input type="text" class="form-control" id="mobility" name="mobility" [(ngModel)]="information.mobility" required>
+    </div>
+    <div class="mb-4">
+      <label for="phone" class="form-label">Phone</label>
+      <input type="text" class="form-control" id="phone" name="phone" [(ngModel)]="information.phone" required>
+    </div>
+    <div class="mb-4">
+      <label for="email" class="form-label">Email</label>
+      <input type="text" class="form-control" id="email" name="email" [(ngModel)]="information.email" required>
+    </div>
+    <div class="mb-4">
+      <label for="linkedin" class="form-label">LinkedIn</label>
+      <input type="text" class="form-control" id="linkedin" name="linkedin" [(ngModel)]="information.linkedIn" required>
+    </div>
+    <div class="mb-4">
+      <label for="github" class="form-label">GitHub</label>
+      <input type="text" class="form-control" id="github" name="github" [(ngModel)]="information.gitHub" required>
+    </div>
+    <div class="text-center my-2">
+      <button type="submit" class="btn btn-primary" [disabled]="!informationForm.form.valid">Save</button>
+    </div>
+  </form>
+
+</div>

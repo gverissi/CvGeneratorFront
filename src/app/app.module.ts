@@ -14,12 +14,14 @@ import { ExperienceFormComponent } from './components/experience-form/experience
 import { ExperienceListComponent } from './components/experience-list/experience-list.component';
 import { SkillListComponent } from './components/skill-list/skill-list.component';
 import { SkillComponent } from './components/skill/skill.component';
+import { InformationFormComponent } from './components/information-form/information-form.component';
 
 const appRoutes: Routes = [
   {path: 'cv', component: CvFormComponent},
   {path: 'person', component: PersonFormComponent},
   {path: 'experiences', component: ExperienceListComponent},
   {path: 'skills', component: SkillListComponent},
+  {path: 'information', component: InformationFormComponent},
   {path: '', redirectTo: '/cv', pathMatch: 'full'},
   {path: '**', redirectTo: '/cv', pathMatch: 'full'}
 ];
@@ -34,7 +36,8 @@ const appRoutes: Routes = [
     ExperienceFormComponent,
     ExperienceListComponent,
     SkillListComponent,
-    SkillComponent
+    SkillComponent,
+    InformationFormComponent
   ],
   imports: [
     BrowserModule,
