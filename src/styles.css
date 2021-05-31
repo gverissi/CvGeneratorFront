@@ -1,1 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+
+.auto-scroll {
+  height: calc(100vh - 218px);
+  overflow-y: auto;
+}
