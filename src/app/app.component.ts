@@ -8,7 +8,7 @@ import {CvIdService} from "./services/cv-id/cv-id.service";
 })
 export class AppComponent {
 
-  title = 'FrontBeetween';
+  title = 'CV to PDF';
   cvId: number = 0;
 
   constructor(private cvIdService: CvIdService) {

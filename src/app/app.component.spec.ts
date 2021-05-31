@@ -19,7 +19,7 @@ describe('AppComponent', () => {
   it(`should have as title 'FrontBeetween'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('FrontBeetween');
+    expect(app.title).toEqual('CV to PDF');
   });
 
   it('should render title', () => {

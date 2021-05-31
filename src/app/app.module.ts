@@ -17,6 +17,8 @@ import { SkillComponent } from './components/skill/skill.component';
 import { InformationFormComponent } from './components/information-form/information-form.component';
 import { ProjectListComponent } from './components/project-list/project-list.component';
 import { ProjectFormComponent } from './components/project-form/project-form.component';
+import { FormationFormComponent } from './components/formation-form/formation-form.component';
+import { FormationListComponent } from './components/formation-list/formation-list.component';
 
 const appRoutes: Routes = [
   {path: 'cv', component: CvFormComponent},
@@ -25,6 +27,7 @@ const appRoutes: Routes = [
   {path: 'skills', component: SkillListComponent},
   {path: 'experiences', component: ExperienceListComponent},
   {path: 'projects', component: ProjectListComponent},
+  {path: 'formations', component: FormationListComponent},
   {path: '', redirectTo: '/cv', pathMatch: 'full'},
   {path: '**', redirectTo: '/cv', pathMatch: 'full'}
 ];
@@ -42,7 +45,9 @@ const appRoutes: Routes = [
     SkillComponent,
     InformationFormComponent,
     ProjectListComponent,
-    ProjectFormComponent
+    ProjectFormComponent,
+    FormationFormComponent,
+    FormationListComponent
   ],
   imports: [
     BrowserModule,
